@@ -33,21 +33,33 @@ def Object_detection(target='fall_down',threshhold=0.5):
 
         results=model(fname)
 
-        # print(results.xyxyn)
+        print(results.xyxyn)
         count_object=0 
+        finish_flag=0
+        
         for result in results.xyxyn[0]:
             #인식한 개체가 target일때
             if result[-1]==target:
                 #인식 confidence가 threshold보다 높은지 확인
                 if result[-2]>=threshhold:
-                    print('Detected')
+                    print('Fall down Detected')
                     count_object+=1
 
-        score.append(count_object)
+            #finish 인식
+            elif result[-1]==3:
+                #인식 confidence가 threshold보다 높은지 확인
+                if result[-2]>=threshhold:
+                    print('Finish Detected')
+                    finish_flag=1
+                    
+        if finish_flag==1:
+            score.append(-999)
+        else:
+            score.append(count_object)
         #results.show()  
     print("objectDetectionScore:",score)
         
     return score
 
-
-# print(Object_detection())
+if __name__ == "__main__":
+    print(Object_detection())

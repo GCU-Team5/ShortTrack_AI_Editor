@@ -10,6 +10,8 @@ def frame_merge(video,total_score,start,sin,finish):
     highlight_position = []
     Start = VideoFileClip(start).subclip(0,1)
     Sin=VideoFileClip(sin)
+    Sin=Sin.crossfadeout(1) #fadein 1초
+
     Finish=VideoFileClip(finish).subclip(0,1)
     
     #하이라이트 스코어가 일정 수치 이상인 frame 찾기

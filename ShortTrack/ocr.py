@@ -60,8 +60,9 @@ def ocr_recognition():
             texts = response.text_annotations
             content = texts[0].description
             content = content.replace(',','')
+            # print(path)
             # print(content)
-            #content = content.lower() 소문자로 변환을 여기서 할지 밑에서 할지 고민
+            content = content.lower() #소문자로 변환을 여기서 할지 밑에서 할지 고민
 
             #content str 형
 
@@ -80,10 +81,10 @@ def ocr_recognition():
                     secondPlace = splitWord
                 if splitWord.startswith("3. "):
                     thirdPlace = splitWord
-                if 'Lap:' in splitWord:  # dongmin change
+                if 'lap:' in splitWord:  # dongmin change
                     temp = splitWord.split(':')  # dongmin
                     lapTime.append(temp[1])  # dongmin
-                if 'Speed' in splitWord:
+                if 'speed' in splitWord:
                     speed = splitWord
                 if 'unofficial result' in splitWord:
                     finalLap = True
@@ -117,6 +118,8 @@ def ocr_recognition():
                     imgKeywordSet.add(keyword)
 
             frameScore = lap_rank_socre
+            if finalLap:
+                frameScore += 999
             scoreList.append(frameScore)
 
 
@@ -144,8 +147,7 @@ def ocr_recognition():
 
     for i in range(len(rankingScoreList)):
         scoreList[i] += rankingScoreList[i]
-        if finalLap:
-            scoreList[i] += 999
+        
 
     # print()
     print("Final Result: ", scoreList)
