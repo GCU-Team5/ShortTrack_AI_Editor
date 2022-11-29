@@ -22,7 +22,8 @@ def ocr_recognition():
                 '남자', '여자',
                 'final lap', 'lap:', 'speed',
                 '곽윤기', '최민정',
-                '대한민국', '한국']
+                '대한민국', '한국',
+                'unofficial result']
 
     keywordsScore = [2, 4, 6,
                       3, 6, 9, 12, 15, 18,
@@ -46,6 +47,8 @@ def ocr_recognition():
     images = sorted(glob.glob('./images/temp/*'), key=os.path.getctime)
 
     for path in images:
+        
+        finalLap = False
         try:
 
             with io.open(path, 'rb') as image_file:
@@ -82,6 +85,8 @@ def ocr_recognition():
                     lapTime.append(temp[1])  # dongmin
                 if 'Speed' in splitWord:
                     speed = splitWord
+                if 'unofficial result' in splitWord:
+                    finalLap = True
 
             # lap time socore under the 8.40time :10//// 8.5:8////8.7:6////8.
             lap_rank_socre = 0
@@ -139,6 +144,8 @@ def ocr_recognition():
 
     for i in range(len(rankingScoreList)):
         scoreList[i] += rankingScoreList[i]
+        if finalLap:
+            scoreList[i] += 999
 
     # print()
     print("Final Result: ", scoreList)
