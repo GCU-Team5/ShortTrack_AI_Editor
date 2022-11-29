@@ -33,8 +33,8 @@ def keyword_detection(word_time, count, point):    #STT 스코어  각각 키워
     return score
 
     
-def STT_detection(count):
-    clip = mp.VideoFileClip("VideoFile/short_cut2.mp4")  #처음 wav파일로 바꿀 mp4파일 것
+def STT_detection(count,path):
+    clip = mp.VideoFileClip(path)  #처음 wav파일로 바꿀 mp4파일 것
     clip.audio.write_audiofile("audio.wav")    #저장할 wav파일 이름 설정
 
 
