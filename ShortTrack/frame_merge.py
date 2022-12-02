@@ -43,10 +43,13 @@ def frame_merge(video,total_score,start,sin,finish):
         index_result += 1
         highlight.append(VideoFileClip(video).subclip(start_index-index_size,final_index+index_size))
 
-    output = concatenate_videoclips([Start,highlight[0]],method="compose")
+    output = concatenate_videoclips([highlight[0]],method="chain")
+    #output = concatenate_videoclips([Start,highlight[0]],method="compose")
     for i in range(1,index_result):
-        output = concatenate_videoclips([output,Sin,highlight[i]],method="compose")
-    output = concatenate_videoclips([output,Finish],method="compose")   
+        output = concatenate_videoclips([output,highlight[i]],method="chain")
+
+        #output = concatenate_videoclips([output,Sin,highlight[i]],method="compose")
+    #output = concatenate_videoclips([output,Finish],method="compose")   
     if os.path.exists("/outputVideo/output.mp4"):  
         shutil.rmtree("./__pycache__")
     output.write_videofile("./outputVideo/output.mp4")
