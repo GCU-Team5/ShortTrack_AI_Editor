@@ -119,7 +119,9 @@ def ocr_recognition():
 
             frameScore = lap_rank_socre
             if finalLap:
-                frameScore += 999
+                scoreList[-6] += 999
+                # frameScore += 999
+
             scoreList.append(frameScore)
 
 
