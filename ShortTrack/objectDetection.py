@@ -19,8 +19,12 @@ def Object_detection(target='fall_down',threshhold=0.5):
     target_id_to_name = ['fall_down','skating','start', 'finish']
     target_name_to_id = {target_id_to_name[i]: i for i in range(len(target_id_to_name))}
     
+
+    start_threshold=0.4
+    finish_threshold=0.4
+
     #모델 파라미터 load
-    model = torch.hub.load("yolov5", 'custom', path="./best.pt", source='local')
+    model = torch.hub.load("yolov5", 'custom', path="./yolov5m_4object_best.pt", source='local')
     
     #객체를 index번호로 바꿈
     target=target_name_to_id[target]
@@ -36,30 +40,52 @@ def Object_detection(target='fall_down',threshhold=0.5):
         print(results.xyxyn)
         count_object=0 
         finish_flag=0
-        
+        start_flag=0
+
         for result in results.xyxyn[0]:
             #인식한 개체가 target일때
             if result[-1]==target:
                 #인식 confidence가 threshold보다 높은지 확인
                 if result[-2]>=threshhold:
+                    print(fname)
                     print('Fall down Detected')
                     count_object+=1
+
+            #start 인식
+            elif result[-1]==2:
+                #인식 confidence가 threshold보다 높은지 확인
+                if result[-2]>=start_threshold:
+                    print(fname)
+                    print('Start Detected')
+                    start_flag=1 
 
             #finish 인식
             elif result[-1]==3:
                 #인식 confidence가 threshold보다 높은지 확인
-                if result[-2]>=threshhold:
+                if result[-2]>=finish_threshold:
+                    print(fname)
                     print('Finish Detected')
                     finish_flag=1
-                    
+
+             
+
         if finish_flag==1:
-            score.append(-999)
+            score.append(999)
+        elif start_flag==1:
+            score.append(999)
         else:
-            score.append(count_object)
+            score.append(count_object*50)
         #results.show()  
     print("objectDetectionScore:",score)
         
     return score
 
 if __name__ == "__main__":
-    print(Object_detection())
+    # Object_detection()
+    model = torch.hub.load("yolov5", 'custom', path="./yolov5m_4object_best.pt", source='local')
+    # fname='testimage/KakaoTalk_20221202_173459150_10.png'
+    fname='images/temp/frame148.png'
+    results=model(fname)
+    print(results.names)
+    print(results.xyxyn)
+    results.show()  
