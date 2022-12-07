@@ -14,30 +14,35 @@ threshhold=0.7 #객체인식 임계 확률
 
 
 
-def Object_detection(target='fall_down',threshhold=0.5):
+def Object_detection(frame_count,target='fall_down',threshhold=0.5):
     
     target_id_to_name = ['fall_down','skating','start', 'finish']
     target_name_to_id = {target_id_to_name[i]: i for i in range(len(target_id_to_name))}
+    
     
 
     start_threshold=0.4
     finish_threshold=0.4
 
     #모델 파라미터 load
-    model = torch.hub.load("yolov5", 'custom', path="./yolov5m_4object_best.pt", source='local')
+    model = torch.hub.load("yolov5", 'custom', path="./relabel_v5m_best.pt", source='local')
     
     #객체를 index번호로 바꿈
     target=target_name_to_id[target]
     score=[]
 
     #frame path
-    images=sorted(glob.glob('./images/temp/*'), key=os.path.getctime)
+    images=sorted(glob.glob('./images/temp2/*'), key=os.path.getctime)
+    
+    #xg_list (fall_down,start_finish)
+    xg_list=[[0]*2 for _ in range(frame_count*3+3)]
 
+    count=0
     for fname in images:
 
         results=model(fname)
 
-        print(results.xyxyn)
+        # print(results.xyxyn)
         count_object=0 
         finish_flag=0
         start_flag=0
@@ -51,6 +56,9 @@ def Object_detection(target='fall_down',threshhold=0.5):
                     print('Fall down Detected')
                     count_object+=1
 
+                    #xg list의 falldown feature 1로 초기화
+                    xg_list[count][0]=1
+
             #start 인식
             elif result[-1]==2:
                 #인식 confidence가 threshold보다 높은지 확인
@@ -58,6 +66,8 @@ def Object_detection(target='fall_down',threshhold=0.5):
                     print(fname)
                     print('Start Detected')
                     start_flag=1 
+
+                    xg_list[count][1]=1
 
             #finish 인식
             elif result[-1]==3:
@@ -67,6 +77,8 @@ def Object_detection(target='fall_down',threshhold=0.5):
                     print('Finish Detected')
                     finish_flag=1
 
+                    xg_list[count][1]=1
+
              
 
         if finish_flag==1:
@@ -75,17 +87,22 @@ def Object_detection(target='fall_down',threshhold=0.5):
             score.append(999)
         else:
             score.append(count_object*50)
-        #results.show()  
+        #results.show() 
+
+        count+=1
+         
     print("objectDetectionScore:",score)
-        
-    return score
+    print("xg_list",xg_list)
+
+    return score,xg_list
 
 if __name__ == "__main__":
-    # Object_detection()
-    model = torch.hub.load("yolov5", 'custom', path="./yolov5m_4object_best.pt", source='local')
-    # fname='testimage/KakaoTalk_20221202_173459150_10.png'
-    fname='images/temp/frame148.png'
-    results=model(fname)
-    print(results.names)
-    print(results.xyxyn)
-    results.show()  
+    Object_detection(73)
+    # model = torch.hub.load("yolov5", 'custom', path="./relabel_v5m_best.pt", source='local')
+    # model = torch.hub.load("yolov5", 'custom', path="./yolov5m_4object_best.pt", source='local')
+    # fname='testimage/KakaoTalk_20221202_173459150_12.png'
+    # # fname='images/temp/frame148.png'
+    # results=model(fname)
+    # print(results.names)
+    # print(results.xyxyn)
+    # results.show()  

@@ -9,25 +9,27 @@ from matplotlib import pyplot as plt
 import moviepy.editor as mp
 
 
-def Frequency_score(up_frequency, count, point):  #주파수 스코어  각각 키워드 추출시간, 영상Frame 길이, point점수
+def Frequency_score(up_frequency, count, point, xg_list):  #주파수 스코어  각각 키워드 추출시간, 영상Frame 길이, point점수
     
     score=[0 for i in range(count)]     #
    
     for i in up_frequency:
         frame_index = i/1
         frame_index = round(frame_index)
+        xg_list[frame_index][1]=1
         score[frame_index] = point
   
     return score
 
 
-def keyword_detection(word_time, count, point):    #STT 스코어  각각 키워드 추출시간, 영상Frame 길이, point점수
+def keyword_detection(word_time, count, point, xg_list):    #STT 스코어  각각 키워드 추출시간, 영상Frame 길이, point점수
 
     score=[0 for i in range(count)]
     
     for i in word_time:
         frame_index = i/1
         frame_index = round(frame_index)
+        xg_list[frame_index][0]=1
         score[frame_index] = point
 
     return score
@@ -135,14 +137,15 @@ def STT_detection(count,path):
 
 
     frame_len=count
-
-    score = keyword_detection(word_time, frame_len, 3)   #STT 스코어  각각 키워드 추출시간, 영상Frame 길이, Score점수
-    score2 = keyword_detection(word_time2, frame_len, 5)   
-    score3 = keyword_detection(word_time3, frame_len, 10)   
-    score4 = Frequency_score(up_frequency, frame_len, 1) #주파수 스코어 
+    xg_list=[[0]*2 for _ in range(frame_len)]
+    
+    score = keyword_detection(word_time, frame_len, 3,xg_list)   #STT 스코어  각각 키워드 추출시간, 영상Frame 길이, Score점수
+    score2 = keyword_detection(word_time2, frame_len, 5,xg_list)   
+    score3 = keyword_detection(word_time3, frame_len, 10,xg_list)   
+    score4 = Frequency_score(up_frequency, frame_len, 1,xg_list) #주파수 스코어 
 
     total_score = [score[i] + score2[i] + score3[i] + score4[i] for i in range(len(score))] # 스코어들의 List 합
 
     print("STT_score:", total_score)
 
-    return total_score
+    return total_score,xg_list

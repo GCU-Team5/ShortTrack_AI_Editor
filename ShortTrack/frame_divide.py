@@ -42,4 +42,4 @@ def frame_divide(video):
         if e.errno != e.EEXIST:
             print("Failed to create directory!!!!!")
             raise
-    return count,imagePath
+    return count2,imagePath

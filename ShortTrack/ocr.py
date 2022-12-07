@@ -11,7 +11,7 @@ import os
 
 #MAC json 경로
 
-def ocr_recognition():
+def ocr_recognition(count):
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./google_json/shorttrack2-637100724bf4.json"
     client = vision.ImageAnnotatorClient()
     #잘려진 frame 이미지 ocr 인식하기
@@ -45,6 +45,7 @@ def ocr_recognition():
 
     speed = ""
     images = sorted(glob.glob('./images/temp/*'), key=os.path.getctime)
+
 
     for path in images:
         
@@ -142,7 +143,7 @@ def ocr_recognition():
             print("ocr 결과가 없습니다.")
             scoreList.append(0)
 
-    rankingScoreList = rankingChangeScore(ranking)
+    rankingScoreList,xg_list = rankingChangeScore(ranking,count)
     # print("ranking score list: ", rankingScoreList)
     # print()
     # print("score lap list: ", scoreList)
@@ -153,11 +154,14 @@ def ocr_recognition():
 
     # print()
     print("Final Result: ", scoreList)
-    return scoreList
+    return scoreList, xg_list
 
     #준결승이 content에 있으면 준결승이라 정확히 인식하지만 결승도 인식을 해버리는 문제 발생
 
-def rankingChangeScore(ranking):
+def rankingChangeScore(ranking,frame_count):
+
+    #xg list
+    xg_list=[0 for _ in range(frame_count)]
 
     # ranking = ['1. LI J.', '2. CHOI M..', '3. QU C.',
     #            '1. LI J.', '2. CHOI M..', '3. QU C.',
@@ -192,9 +196,12 @@ def rankingChangeScore(ranking):
         if(thirdPlaceFront != thirdPlaceRear):
             score = score + 2
 
+        #xg list, 순위 변동시 1로 초기화
+        if score!=0:
+            xg_list[i]=1
         scoreList.append(score)
 
-    return scoreList
+    return scoreList, xg_list
 
 
 
