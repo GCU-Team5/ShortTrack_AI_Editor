@@ -25,7 +25,7 @@ def Object_detection(frame_count,target='fall_down',threshhold=0.5):
     finish_threshold=0.4
 
     #모델 파라미터 load
-    model = torch.hub.load("yolov5", 'custom', path="./relabel_v5m_best.pt", source='local')
+    model = torch.hub.load('yolov5', 'custom', path='./relabel_v5m_best.pt', source='./local')
     
     #객체를 index번호로 바꿈
     target=target_name_to_id[target]
@@ -103,7 +103,7 @@ def Object_detection(frame_count,target='fall_down',threshhold=0.5):
     return score,xg_list
 
 if __name__ == "__main__":
-    Object_detection(73)
+    Object_detection(106)
     # model = torch.hub.load("yolov5", 'custom', path="./relabel_v5m_best.pt", source='local')
     # model = torch.hub.load("yolov5", 'custom', path="./yolov5m_4object_best.pt", source='local')
     # fname='testimage/KakaoTalk_20221202_173459150_12.png'
