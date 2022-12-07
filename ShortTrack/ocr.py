@@ -211,5 +211,5 @@ def rankingChangeScore(ranking,frame_count):
 
 
 if __name__ == "__main__":
-    ocr_recognition()
+    ocr_recognition(74)
     #print(rankingChangeScore())
