@@ -46,7 +46,7 @@ def frame_merge(video,total_score,start,sin,finish):
         print("No highlight")
         return 0
     #앞뒤 몇초
-    index_size = 2
+    index_size = 3
     start_index = 0
     final_index = 0
     index = 0
