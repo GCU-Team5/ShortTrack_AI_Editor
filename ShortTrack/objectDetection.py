@@ -83,10 +83,10 @@ def Object_detection(frame_count,target='fall_down',threshhold=0.5):
             score[-1] = 999
             temp_start-=1
 
-        if finish_flag==1:
+        if start_flag==1:
             temp_start = 15
             score.append(999)
-        elif start_flag==1:
+        elif finish_flag==1 & len(score)>15:
             for i in range(15):
                 score[-i] = 999
             score.append(999)
