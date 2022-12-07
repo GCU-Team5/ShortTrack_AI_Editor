@@ -34,9 +34,9 @@ def frame_merge(video,total_score,start,sin,finish):
 
 
     #하이라이트 스코어가 일정 수치 이상인 frame 찾기
-    arr_size = len(new_hightlight)
+    arr_size = len(total_score)
     for i in range(0,arr_size):
-        if(max_highlight_score <= new_hightlight[i]):
+        if(max_highlight_score <= total_score[i]):
             highlight_position.append(i)
     highlight_position.append(99999999)
 

@@ -10,12 +10,13 @@ def frame_divide(video):
             shutil.rmtree(imagePath)
         if not (os.path.isdir(video)):
             os.makedirs(os.path.join(imagePath + "temp"))
+            os.makedirs(os.path.join(imagePath + "temp2"))
 
             cap = cv2.VideoCapture(video)
 
             #이미지 수
             count = 0
-
+            count2 = 0
             while True:
                 ret, image = cap.read()
                 # 이미지 사이즈 960x540으로 변경
@@ -24,8 +25,11 @@ def frame_divide(video):
                 if not ret:
                     break
                 
-                if(int(cap.get(1)) % 24 == 0):#30이 1초
-                    cv2.imwrite(imagePath + "temp" + "/frame%d.png" % count, image)
+                if(int(cap.get(1)) % 10 == 0):#29이 1초
+                    if(count%3==0):
+                        cv2.imwrite(imagePath + "temp" + "/frame%d.png" % count2, image)
+                        count2 += 1
+                    cv2.imwrite(imagePath + "temp2" + "/frame%d.png" % count, image)
 
                     print('%d.png done' % count)
                     count += 1
