@@ -55,7 +55,7 @@ def STT_detection(count,path):
         
     up_frequency = list(set(up_frequency))
 
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"google_json\pure-anthem-369402-9bcdbdacbb25.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"google_json/pure-anthem-369402-9bcdbdacbb25.json"
 
     client = speech.SpeechClient()
 

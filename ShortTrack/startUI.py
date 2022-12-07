@@ -71,18 +71,25 @@ def open_cutsin_video(n):
 
 def open_cutsin():
    window_cutsin = tkinter.Toplevel()
-   window_cutsin.geometry("640x400+500+200")
+   window_cutsin.geometry("792x440")
    window_cutsin.resizable(False, False)
-   label_cutsin=tkinter.Label(window_cutsin, text="Input Cut Scene.", width=30, height=3, fg="black", relief="solid")
-   button_Start = tkinter.Button(window_cutsin, text="Start", overrelief="solid", width=15, command=lambda : open_cutsin_video(1), repeatdelay=1000, repeatinterval=100)
-   button_Cut = tkinter.Button(window_cutsin, text="Cut", overrelief="solid", width=15, command=lambda : open_cutsin_video(2), repeatdelay=1000, repeatinterval=100)
-   button_Finish = tkinter.Button(window_cutsin, text="Finish", overrelief="solid", width=15, command=lambda : open_cutsin_video(3), repeatdelay=1000, repeatinterval=100)
-   button_Cutsin_close = tkinter.Button(window_cutsin, text="Close", overrelief="solid", width=15, command=lambda : on_closing(window_cutsin,2), repeatdelay=1000, repeatinterval=100)
+   image = tkinter.PhotoImage(file='startUI2.png')
+
+   label_cutsin=tkinter.Label(window_cutsin, image=image)
    label_cutsin.pack()
-   button_Start.pack()
-   button_Cut.pack()
-   button_Finish.pack()
-   button_Cutsin_close.pack()
+
+   button_Start = tkinter.Button(window_cutsin, text="Start", background="white", borderwidth=0,  padx=0, pady=0, width=15, command=lambda : open_cutsin_video(1), repeatdelay=1000, repeatinterval=100)
+   button_Start.place(x=510, y=90)
+
+   button_Cut = tkinter.Button(window_cutsin, text="Cut", background="white", borderwidth=0,  padx=0, pady=0, width=15, command=lambda : open_cutsin_video(2), repeatdelay=1000, repeatinterval=100)
+   button_Cut.place(x=510, y=180)
+
+   button_Finish = tkinter.Button(window_cutsin, text="Finish", background="white", borderwidth=0,  padx=0, pady=0, width=15, command=lambda : open_cutsin_video(3), repeatdelay=1000, repeatinterval=100)
+   button_Finish.place(x=510, y=270)
+
+   button_Cutsin_close = tkinter.Button(window_cutsin, text="Close", background="white", borderwidth=0,  padx=0, pady=0, width=15, command=lambda : on_closing(window_cutsin,2), repeatdelay=1000, repeatinterval=100)
+   button_Cutsin_close.place(x=510, y=360)
+  
    window_cutsin.mainloop()
    
 #버튼 설정
