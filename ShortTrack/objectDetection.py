@@ -19,7 +19,7 @@ def Object_detection(frame_count,target='fall_down',threshhold=0.5):
     target_id_to_name = ['fall_down','skating','start', 'finish']
     target_name_to_id = {target_id_to_name[i]: i for i in range(len(target_id_to_name))}
     
-    
+    temp_start = 0
 
     start_threshold=0.4
     finish_threshold=0.4
@@ -79,12 +79,18 @@ def Object_detection(frame_count,target='fall_down',threshhold=0.5):
 
                     xg_list[count][1]=1
 
-             
+        if(temp_start>0):
+            score[-1] = 999
+            temp_start-=1
 
-        if finish_flag==1:
+        if start_flag==1:
+            temp_start = 15
             score.append(999)
-        elif start_flag==1:
+        elif finish_flag==1 & len(score)>15:
+            for i in range(15):
+                score[-i] = 999
             score.append(999)
+            temp_start =10
         else:
             score.append(count_object*50)
         #results.show() 
