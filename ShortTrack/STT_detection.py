@@ -80,13 +80,13 @@ def STT_detection(count,path):
     word_time3 = []
 
     keyword = [ "랭킹","조심","엉키는", "의식", "찬스","인코스", "자리", "연결", "첫번째 주자", "선두", "결승전", "가장먼저", "1번주자"
-            "안전하게" ] #키워드 1점  
-    
-    keyword2 = [  "결과" "도움", "잘들어왔", "마킹", "밀어", "잡아당겼","빠르게", "에이스", "추격", "출발합니다"
-            "좋아", "좋습니다", "넘겨줍니다", "타이밍"," 추격", "두바퀴", "치고 나갑니다."]     #3점
+            "안전하게" ] 
+                #키워드 3점  
+    keyword2 = ["위치파악", "가고", "결과" "도움","잘들어왔", "마킹", "밀어", "잡아당겼","빠르게", "에이스", "추격", "출발합니다"
+            "좋아", "좋습니다", "넘겨줍니다", "타이밍"," 추격", "두바퀴", "바톤을", "경기초반", "거리를", "1위", "2위", "치고 나갑니다."]     #5점
 
-    keyword3 = ["출발", "충돌", "마지막", "추월", "넘어졌습니다", "넘어짐", "파이널", "결승선 통과", "부딪", "레디", "스타트", "넘어"
-                   "한바퀴", "마지막 주자", "파이널랩", "결승진출", "미끄러",  "마지막 코너"]   #5점
+    keyword3 = ["출발", "충돌", "마지막", "추월", "넘어졌습니다", "대한민국 에이스" "넘어짐", "파이널", "결승선 통과", "부딪", "레디", "스타트", "금메달",
+                "동메달", "은메달", "진출", "한바퀴", "마지막 주자", "파이널랩", "결승진출","뻗습니다.", "미끄러", "결승진출", "마지막 코너"]   #10점
 
     def transcribe_gcs(gcs_uri):
         client = speech.SpeechClient()
@@ -139,9 +139,9 @@ def STT_detection(count,path):
     frame_len=count
     xg_list=[[0]*2 for _ in range(frame_len)]
     
-    score = keyword_detection(word_time, frame_len, 1,xg_list)   #STT 스코어  각각 키워드 추출시간, 영상Frame 길이, Score점수
-    score2 = keyword_detection(word_time2, frame_len, 3,xg_list)   
-    score3 = keyword_detection(word_time3, frame_len, 5,xg_list)   
+    score = keyword_detection(word_time, frame_len, 3,xg_list)   #STT 스코어  각각 키워드 추출시간, 영상Frame 길이, Score점수
+    score2 = keyword_detection(word_time2, frame_len, 5,xg_list)   
+    score3 = keyword_detection(word_time3, frame_len, 10,xg_list)   
     score4 = Frequency_score(up_frequency, frame_len, 1,xg_list) #주파수 스코어 
 
     total_score = [score[i] + score2[i] + score3[i] + score4[i] for i in range(len(score))] # 스코어들의 List 합
