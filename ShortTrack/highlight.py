@@ -31,17 +31,9 @@ def highlight(count,videopath):
     total_score=[0 for j in range(count)]
     #score 종합
 
-    print('Count',count)
-    print(len(total_score))
-    print(len(score_list[0]))
-    print(len(score_list[1]))
-    print(len(score_list[2]))
-    print(len(score_list[3]))
 
 
     for i in range(0,count): 
-
-        print(i)
         total_score[i]=score_list[0][i]+score_list[1][i]+score_list[2][i]+score_list[3][i]
 
 
