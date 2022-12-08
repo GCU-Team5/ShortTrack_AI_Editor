@@ -198,7 +198,7 @@ def rankingChangeScore(ranking,frame_count):
 
         #xg list, 순위 변동시 1로 초기화
         if score!=0:
-            xg_list[i]=1
+            xg_list[j]=1
         scoreList.append(score)
 
     return scoreList, xg_list
