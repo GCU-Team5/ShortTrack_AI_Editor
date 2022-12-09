@@ -8,13 +8,15 @@ def frame_merge(video,total_score,start,sin,finish):
     max_highlight_score = 8
     highlight = []
     highlight_position = []
+    #앞뒤 몇초
+    index_size = 3
     Start = VideoFileClip(start).subclip(0,1)
     Sin=VideoFileClip(sin)
     Sin=Sin.crossfadeout(1) #fadein 1초
-
     Finish=VideoFileClip(finish).subclip(0,1)
     
-    arr_size = len(total_score)
+    for q in range(index_size):
+        total_score[q] = 0
     
     ##현제 1초에 3frame
     # index_total = 0
@@ -43,8 +45,7 @@ def frame_merge(video,total_score,start,sin,finish):
     if(len(highlight_position)<2):
         print("No highlight")
         return 0
-    #앞뒤 몇초
-    index_size = 3
+
     start_index = 0
     final_index = 0
     index = 0
