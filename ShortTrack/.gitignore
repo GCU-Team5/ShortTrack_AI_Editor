@@ -1,0 +1,8 @@
+VideoFile/
+
+images/
+
+_pycache_/
+
+yolov5/
+audio.wav/
