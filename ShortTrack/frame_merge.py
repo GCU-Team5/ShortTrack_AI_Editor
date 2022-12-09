@@ -40,7 +40,9 @@ def frame_merge(video,total_score,start,sin,finish):
     for i in range(0,arr_size):
         if(max_highlight_score <= total_score[i]):
             highlight_position.append(i)
-    highlight_position.append(99999999)
+    for q in range(index_size):
+        highlight_position.append(99999999)
+
 
     if(len(highlight_position)<2):
         print("No highlight")
@@ -52,7 +54,7 @@ def frame_merge(video,total_score,start,sin,finish):
     index_result = 0
     print("score chaine")
     print(highlight_position)
-    while(index<len(highlight_position)-1):
+    while(index<len(highlight_position)-index_size):
         start_index = highlight_position[index]
         final_index = start_index
         for j in range(index,len(highlight_position)-1):
