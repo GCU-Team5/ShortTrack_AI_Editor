@@ -197,9 +197,19 @@ def rankingChangeScore(ranking,frame_count):
             score = score + 2
 
         #xg list, 순위 변동시 1로 초기화
-        if score!=0:
-            xg_list[j]=1
-        scoreList.append(score)
+        if(j>8):
+            if score!=0:
+                for k in range(0,8):
+                    xg_list[j-k]=1
+        
+            scoreList.append(score)
+            for k in range(0,8):
+                scoreList[-k] += score
+        else:
+            if score!=0:
+                xg_list[j]=1
+            
+            scoreList.append(score)
 
     return scoreList, xg_list
 
