@@ -65,3 +65,11 @@
 <div align='center'>
   <img src = 'https://user-images.githubusercontent.com/76763417/234523242-e7d00de2-6f8d-42c9-b943-88f7d4c05dba.png' width=600 height=300>
 </div>
+
+<div>
+  <h2>Database</h2>
+  <h4>AWS RDS - MySQL</h4>
+  <div align='center'>
+    <img src='https://github.com/GCU-Team5/ShortTrack_AI_Editor/assets/76763417/3e45146e-b603-426a-9a77-3782b404d57c' width=600 height=450>
+  </div>
+</div>
