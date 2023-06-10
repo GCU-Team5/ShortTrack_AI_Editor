@@ -70,6 +70,6 @@
   <h2>Database</h2>
   <h4>AWS RDS - MySQL</h4>
   <div align='center'>
-    <img src='https://github.com/GCU-Team5/ShortTrack_AI_Editor/assets/76763417/3e45146e-b603-426a-9a77-3782b404d57c' width=600 height=450>
+    <img src='https://github.com/GCU-Team5/ShortTrack_AI_Editor/assets/76763417/86f83544-906e-4df7-ad65-662747a49558' width=600 height=450>
   </div>
 </div>
