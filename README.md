@@ -1,6 +1,6 @@
 <div>
   <div align='center'>
-    <img src = 'https://user-images.githubusercontent.com/76763417/234223416-90fadc3f-3e43-46c8-beaf-0a3b63c8af83.png' width=600 height=380>
+    <img src = '![title](https://github.com/GCU-Team5/ShortTrack_AI_Editor/assets/87708360/591b6ad8-7dcc-4246-95c5-01ec7b9c74e3)' width=600 height=380>
   </div>
 </div>
 <div>
