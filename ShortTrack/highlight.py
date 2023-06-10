@@ -31,17 +31,15 @@ def highlight(count,videopath):
     total_score=[0 for j in range(count)]
     #score 종합
 
-    print('Count',count)
-    print(len(total_score))
-    print(len(score_list[0]))
-    print(len(score_list[1]))
-    print(len(score_list[2]))
-    print(len(score_list[3]))
+    # print('Count',count)
+    # print(len(total_score))
+    # print(len(score_list[0]))
+    # print(len(score_list[1]))
+    # print(len(score_list[2]))
+    # print(len(score_list[3]))
 
 
     for i in range(0,count): 
-
-        print(i)
         total_score[i]=score_list[0][i]+score_list[1][i]+score_list[2][i]+score_list[3][i]
 
 
@@ -67,11 +65,9 @@ def highlight(count,videopath):
         xg_STT1.append(xg_STT[i][0])
         xg_STT2.append(xg_STT[i][1])
     df = pd.DataFrame((zip(xg_Object_F,xg_Object_SF,xg_OCR,xg_STT1,xg_STT2)), columns = ['fall_down','start_finsh','rank_change', 'keyword', 'frequency'])
-
-
-    print('df',df)
+    df.to_csv("train_xgb.csv",mode='w')
 
     return total_score
 
 if __name__ == "__main__":
-    highlight(73,"./VideoFile/test2.mp4")
+    highlight(135,"./VideoFile/final!!.mp4")

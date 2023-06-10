@@ -4,6 +4,7 @@ import shutil
 
 def frame_divide(video):
     imagePath = './images/'
+    print(video)
     try:
         #임시로 파일이 있으면 삭제하는거 만든거
         if os.path.exists(imagePath):

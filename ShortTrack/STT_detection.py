@@ -55,7 +55,7 @@ def STT_detection(count,path):
         
     up_frequency = list(set(up_frequency))
 
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"google_json/pure-anthem-369402-9bcdbdacbb25.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"./google_json/short-track-ai-editor-5d0858911ff8.json"
 
     client = speech.SpeechClient()
 
@@ -64,7 +64,7 @@ def STT_detection(count,path):
 
 
 
-    bucket_name = 'short_track-ai_editor'  # 서비스 계정 생성한 bucket 이름 입력
+    bucket_name = 'short_track-ai_editor3'  # 서비스 계정 생성한 bucket 이름 입력
     source_file_name = r'audio.wav'  # GCP에 업로드할 파일 경로
     destination_blob_name = 'audio.wav'  # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -124,7 +124,7 @@ def STT_detection(count,path):
 
 
 
-    response = transcribe_gcs("gs://short_track-ai_editor/audio.wav") # 구글 안에 있는 STT 파일이라서 바꾸면 안될듯
+    response = transcribe_gcs("gs://short_track-ai_editor3/audio.wav") # 구글 안에 있는 STT 파일이라서 바꾸면 안될듯
 
 
 
@@ -142,7 +142,7 @@ def STT_detection(count,path):
     score = keyword_detection(word_time, frame_len, 1,xg_list)   #STT 스코어  각각 키워드 추출시간, 영상Frame 길이, Score점수
     score2 = keyword_detection(word_time2, frame_len, 3,xg_list)   
     score3 = keyword_detection(word_time3, frame_len, 5,xg_list)   
-    score4 = Frequency_score(up_frequency, frame_len, 1,xg_list) #주파수 스코어 
+    score4 = Frequency_score(up_frequency, frame_len, 3,xg_list) #주파수 스코어 
 
     total_score = [score[i] + score2[i] + score3[i] + score4[i] for i in range(len(score))] # 스코어들의 List 합
 

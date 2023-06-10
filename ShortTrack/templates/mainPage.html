@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+    <style>
+        /* 페이지의 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            height: 96vh;
+            width: 98vw;
+            background-image: url("/static/background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+
+        /* 파일 업로드 컨테이너의 스타일 */
+        .container {
+            max-width: 400px;
+            position: absolute;
+            top: 250px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 양식 그룹의 스타일 */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* 레이블의 스타일 */
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* 파일 선택 필드의 스타일 */
+        .form-group input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* 업로드 버튼의 스타일 */
+        .form-group input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* 업로드 버튼 호버 시의 스타일 */
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- 파일 업로드 컨테이너 -->
+    <div class="container">
+        <!-- 페이지 제목 -->
+        <h1>File Upload</h1>
+        <div class="form-group">
+            <!-- 파일 업로드 폼 -->
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <!-- 파일 선택 레이블 -->
+                <label for="video">Choose a video file:</label>
+                <!-- 파일 선택 필드 -->
+                <input type="file" name="video" id="video" accept="video/*" required/>
+                <!-- 업로드 버튼 -->
+                <input type="submit" value="Upload"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

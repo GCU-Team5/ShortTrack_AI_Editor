@@ -82,11 +82,11 @@ def Object_detection(frame_count,target='fall_down',threshhold=0.5):
              
 
         if finish_flag==1:
-            score.append(999)
+            score.append(10)
         elif start_flag==1:
-            score.append(999)
+            score.append(10)
         else:
-            score.append(count_object*50)
+            score.append(count_object*10)
         #results.show() 
 
         count+=1
@@ -97,7 +97,7 @@ def Object_detection(frame_count,target='fall_down',threshhold=0.5):
     return score,xg_list
 
 if __name__ == "__main__":
-    Object_detection(73)
+    Object_detection(403)
     # model = torch.hub.load("yolov5", 'custom', path="./relabel_v5m_best.pt", source='local')
     # model = torch.hub.load("yolov5", 'custom', path="./yolov5m_4object_best.pt", source='local')
     # fname='testimage/KakaoTalk_20221202_173459150_12.png'

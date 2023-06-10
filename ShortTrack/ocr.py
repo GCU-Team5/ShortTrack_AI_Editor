@@ -12,7 +12,7 @@ import os
 #MAC json 경로
 
 def ocr_recognition(count):
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./google_json/shorttrack2-637100724bf4.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./google_json/shorttrack3-0c99622743c0.json"
     client = vision.ImageAnnotatorClient()
     #잘려진 frame 이미지 ocr 인식하기
     #set, dic, hash, list
@@ -42,7 +42,7 @@ def ocr_recognition(count):
     firstPlace = ""
     secondPlace = ""
     thirdPlace = ""
-
+    cnt = 0
     speed = ""
     images = sorted(glob.glob('./images/temp/*'), key=os.path.getctime)
 
@@ -71,18 +71,24 @@ def ocr_recognition(count):
             #1.  ~ \n
             #2.  ~ \n
             #3.  ~ \n
-
+            
+            print("Frame",cnt)            
+            cnt+=1
             lapTime = []  # dongmin
             splitWords = content.split('\n')
             # print("splitWords: ", splitWords)
             for splitWord in splitWords:
                 if splitWord.startswith("1. "):
                     firstPlace = splitWord
+                    print(firstPlace)
                 if splitWord.startswith("2. "):
                     secondPlace = splitWord
+                    print(secondPlace)
                 if splitWord.startswith("3. "):
                     thirdPlace = splitWord
+                    print(thirdPlace)
                 if 'lap:' in splitWord:  # dongmin change
+                    print(splitWord)
                     temp = splitWord.split(':')  # dongmin
                     lapTime.append(temp[1])  # dongmin
                 if 'speed' in splitWord:
@@ -102,6 +108,7 @@ def ocr_recognition(count):
                     if lap_rank_score_temp < 0:
                         lap_rank_score_temp = 0 
                     lap_rank_socre += lap_rank_score_temp ** 2
+
                     
 
             ranking.append(firstPlace)
@@ -221,5 +228,5 @@ def rankingChangeScore(ranking,frame_count):
 
 
 if __name__ == "__main__":
-    ocr_recognition()
+    ocr_recognition(135)
     #print(rankingChangeScore())
