@@ -73,3 +73,9 @@
     <img src='https://github.com/GCU-Team5/ShortTrack_AI_Editor/assets/76763417/86f83544-906e-4df7-ad65-662747a49558' width=600 height=450>
   </div>
 </div>
+<div>
+  <h4>
+    For more information please check our <a href="https://github.com/GCU-Team5/ShortTrack_AI_Editor/wiki" target="_blank">WIKI page</a>
+  </h4>
+</div>
+
