@@ -1,13 +1,13 @@
 {
-  "type": "service_account",
-  "project_id": "short-track-ai-editor",
-  "private_key_id": "5d0858911ff8b8fea4fbbd91a57688633aa74534",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDAM/kUotzNfAIw\nq9CFUUql33zGoVchD3PS8j7AKDMeb4g9Fp7iyHwOn0YA2F7GUQpSPmuVFTtJta1O\npE5Ga3y3kzSJ6xykUmjJeMPBvlbxP1+fTz+Bx5Qa5yl/ps/8Mmaw70KB3TKqMOY4\nW/a+5AiPHr7Yf9eId/JaKsAJag673LHhbxjIrsnRILQvIv7ITRodzgh204csDZcT\n4QdDuplM+hw8ll7b9/ZHjejH0q2j43CZ/+C3fJPz6bV7igZFEguqAMWUDARg6gdf\nctpH45FmhxbWLKlMws2tk6lrWc+kZjnzKCPckv86RgWuI3LlQq3Yks0q38REj7+L\nlP/oe98nAgMBAAECggEATXMD/TFNaU39sfAiI/6oZmPCq2WrLurDoO61o4fvZWXL\nD9a0Kq1f9CJxOnj149MXJiH6BwaZr++SCP0Df7PjezPJuYOwtHRyvjC4LTOOZENF\nvHPaIukxwI+CtOoaqEUFBWo8MglY16TBuFcyfCR2YHmirKoDR34R/gx4+rIugrtO\ne2vvy5c47mZba2ZVizAQ/7k/wFJ4GSAc3yvr47CTUfu+Bh10AGiUtRIEm2b9T86J\nL5ZFn7gG/61BJPA99AqS4DpsI0EGB6Tkjor89TVZg18FSAAZl4s3ukYfi8u6S+Sp\n57e7gAjNlm1tjCI60LVsJq9bIPbOqDwgbVbIA8fxeQKBgQDeOHs+pH9KdIjmkOva\nf9kC/cTcGUlaWqlrfpICFbxdmZQpBF0ENOzRe7JpRVzdMeXumQa7/CzZqPW8sBAL\n7rhUzSgZrHAShyRnW4MZZPOcBac2hjBHHocIfwluRcLxxak6pub40OFfkuRlg9Lv\nHJUhALBS7SlLy2foYZ1b3NObbwKBgQDda2ICytAcHWkYWuiWksK3H8gJJZ5fe17x\n/oIhZbpstRvNQA1S0jvR/XBzuQBwZU/rjxXfvtklRamd7rlzDBXqlM75XxRVsNrg\neudjPfMsumgVQBbQGkQYOWdDIWibU1Jcrgt2TSEVE/n+acNOE2LYi97Lr4ihzrN6\nks8kLZ/7yQKBgQCEVpSm8KXRvGbPEJ006ZBeZKx4+yIhCf79QkpHrZQZFd4TM0MF\nv1MNSiIs6R7tp8qr9jv5datsEGAP97YGtSrXbbok1/mCPzMhznDbjbA6SW+UXAOi\nRv7Zw3XlUuxOuY0Xnc/Ne+/L0BnujrvupFH3boaTTCOcvMzrqj5hN7hZRwKBgA/v\nw60pxdLQNxk+qdD0nTkq+23VHFIJAituwxT+Sm26l1atjofwg8e4cxiRLzvnvtnY\ngZ2KEf0Bx5SLcyOZshYhQchnFIKaaRaRIghdlBwbCpTE+R9fVJldwFXvmKTdWWc8\nS6znHkNzHaI3IIyFDq9BWfbVGoNy6i4fVPNoqUQpAoGBAJJ5HEqnXPBkVssK4B3J\nlRQGtTe/B+JLvBQ3No/6ZZEu313LUYJKzWFN8xAhRIYgGUpWvrNQ5U6g4cQDzQM6\npiahcET8FPIrzwoZtjmWDX3qmnTonxRo4hBUivH+owxGH6vvY1OdC3kL9AhU/ouO\n4FCpfuFp2qz08DM6iVdMATDN\n-----END PRIVATE KEY-----\n",
-  "client_email": "short-track-aieditor@short-track-ai-editor.iam.gserviceaccount.com",
-  "client_id": "104295878721412450263",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/short-track-aieditor%40short-track-ai-editor.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  "type": "",
+  "project_id": "",
+  "private_key_id": "",
+  "private_key": "",
+  "client_email": "",
+  "client_id": "",
+  "auth_uri": "",
+  "token_uri": "",
+  "auth_provider_x509_cert_url": "",
+  "client_x509_cert_url": "",
+  "universe_domain": ""
 }
