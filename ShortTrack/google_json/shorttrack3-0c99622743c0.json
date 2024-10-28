@@ -1,13 +1,13 @@
 {
-  "type": "service_account",
-  "project_id": "shorttrack3",
-  "private_key_id": "0c99622743c099af6335eb5e67962e0f2e62b93a",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDBrwSbg6bLVEvA\nDNoK1qT+StSlNuREOwENgYIDHd0tR3mgVmZNDvlqtqNsY6l/F/KHrEYML/MZNRIR\nglSAaX9iQI4g1IrDTMNQIpmskE7dxsd0Ze5OUeRKaDspcQyQ9tqdTUgxgATt/G+L\nZFoThqbOPseASwzwprEolJVR2hijAMoWIbDJIGr1pcHzhi99z4766ICUlXpckg9M\nxMH+ZuAvMWK1hYhyZA02LqqSE7AFOpCiDThfUkIMcX5canCusoCp+UoDvKZ8c4MF\nwfOpBdDinuM3faYYvIeGC0Zktrzuqll4otu+Nm76tgRfT6ozPrcNOilvjBIZ4d3W\n7FmuYklLAgMBAAECggEABNrz4mTM7dRjXUwDZtYninlHFn4R/7oYRHBoPNbf7MH9\nRP8JCCbTuV6rKamKXfyX6y82KlJE89LQ+yNiXuhikjdMg3sQg+VF2CfCVnMYipZF\nwGbLE6eLONpJ1PDJqr7eVlHR3NEjo9SIaDJeQl23UhkndO3efPOtPpPZLtxTqx0I\nT9DNNrLHk8HlaZCJ9HBSDSLZC5O85Pg/oDUqcuBE5rbGE3pzVtnhr43t6bNFQvKA\nC4c5VKsQmgybn9rfbGJjZAJJGjwcDH3Xu67Sr9ZQK+ywItZ7TQnVWuJLau7F0+7D\ntGEpoYmZ0mvIP6bqfEVxZg4MgZ9xXJy1wfc1bvl40QKBgQDwQGlD+SSRnyA+8Fxv\nVMH6XMOT0upsIgDdLanX2KyXYmMmFFY/CxmKhRf3Po2dcLmzoODdBQM9Zm6x65nc\n4nwXd+CT0/Xs1xB/Z8oOIGVlrD8EIq+vfF/cDY1c986TfQGKFxALoosfJYrBNWwb\njnzIhO0DcdvRF0X4rcnza7CLHQKBgQDOYSoVstz82ekXRE4C1rxNk+11S5IeosGD\nFBL8kAaRiZNIJ+gsWyeFwfFizl7LNrwp8S96XG21Nn7ZmKDD+epVxvDSJ1iZw7Pe\nXNn9fzDQQKnTc3u8gvn9ZB3GHz4ggQuojwrmIDifOtPLD2zeK7YkAYxt0xrSb75B\n0nM1nXwRhwKBgGfY76daAdyQE7gg3VOiJ1a40jELchjbedQg8NFD7xZgiMrk74LA\noYGmlf1hJIVxPFPQrmHa0NOxexec5xz7KPhb8M71R8/gBlmL22LPzgRst7Bp7dbE\nxAqyMPCGjNxjpE60OVNOJySHbbqmBNzEcluaWXirtoBitvQO6sQ1QFJhAoGAaOrC\nf1d3ut94/QgPdKgAAJxUWo35kbOCFwYMhPMfM7ux8TvAb1RD6l7nPSjWzg5caCIh\n1d3JNBepMyvBhv+1HrhNUzkHdNwlw8SGWbXgde55p3KNFA+t0SCldkQJzHJuH9ng\nW49D2ccJRrDn0qZ8KR/UaTyp5RNDsKixQy91lF8CgYB+9Z35qrpyyH7vL+gAWn94\n37uFIJPe91/AGFTiuDCeBI0OWDtqogmfEu3KsbnC+Dt7cT1B1WTGN0+YAVcUAhiv\njzyfBQVHPzKUZudzbBijO/+Y/XI9D4CQ8o32q0mUebw4vc56E5VAfv2BkoT3JalT\nuN6/A+C1roHdvcQ6vlc4eg==\n-----END PRIVATE KEY-----\n",
-  "client_email": "shorttrack3@shorttrack3.iam.gserviceaccount.com",
-  "client_id": "110769297840569327735",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shorttrack3%40shorttrack3.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  "type": "",
+  "project_id": "",
+  "private_key_id": "",
+  "private_key": "",
+  "client_email": "",
+  "client_id": "",
+  "auth_uri": "",
+  "token_uri": "",
+  "auth_provider_x509_cert_url": "",
+  "client_x509_cert_url": "",
+  "universe_domain": ""
 }
